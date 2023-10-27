@@ -7,6 +7,8 @@ class Cast {
   String name;
   String profilePath;
 
+  String getCastUrl() => getMediumPictureUrl(profilePath);
+
 
 factory Cast(Map jsonMap, MediaType mediaType) {
     try {
@@ -17,6 +19,6 @@ factory Cast(Map jsonMap, MediaType mediaType) {
   }
 Cast.deserialize(Map jsonMap, MediaType mediaType) :
 id = jsonMap["cast_id"].toInt(),
-name= jsonMap["cast_id"],
-profilePath = jsonMap["profile_path"];
+name= jsonMap["name"],
+profilePath = jsonMap["profile_path"] ?? "assets/user.png";
 }

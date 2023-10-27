@@ -4,12 +4,16 @@
 // Docente: MTI. Marco Antonio Ramirez Hernandez
 
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
+import 'package:movieapp_200749/cast_scroller.dart';
+import 'package:movieapp_200749/common/MediaProvider.dart';
 import 'package:movieapp_200749/model/Media.dart';
 import 'dart:ui' as ui;
 
 class MediaDetail extends StatelessWidget {
   final Media media;
-  MediaDetail(this.media);
+  final MediaProvider provider;
+  MediaDetail(this.media, this.provider);
 
   @override
   Widget build(BuildContext context) {
@@ -88,12 +92,14 @@ class MediaDetail extends StatelessWidget {
                                 'silver'), // Añade esta línea para justificar el texto
                       )
                     ],
-                  )
+                  ),
+                CastController(provider, media.id)
                 ],
               ),
             ),
           )
         ],
+
       ),
     );
   }

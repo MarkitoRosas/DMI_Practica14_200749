@@ -9,6 +9,7 @@ import 'package:movieapp_200749/common/HttpHandler.dart'; // Importa la clase Ht
 import 'package:movieapp_200749/media_list.dart';
 import 'package:movieapp_200749/common/MediaProvider.dart';
 import 'package:movieapp_200749/model/Media.dart';
+import 'package:movieapp_200749/media_list_item.dart';
 
 class Home extends StatefulWidget {
   const Home(

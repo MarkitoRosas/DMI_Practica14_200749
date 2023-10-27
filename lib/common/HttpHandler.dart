@@ -70,7 +70,7 @@ Future<List<Media>> fetchMovies({String category = "populares"}) async {
     return getJson(uri).then(((data) =>
         data['results'].map<Media>((item) => new Media(item, MediaType.show)).toList()));
   }
-  Future<List<Media>> fetchCreditMovies(int mediaId) async {
+  Future<List<Cast>> fetchCreditMovies(int mediaId) async {
     var uri = new Uri.https(_baseUrl,"3/movie/$mediaId/credits", 
         {
           'api_key': API_KEY,
@@ -80,7 +80,7 @@ Future<List<Media>> fetchMovies({String category = "populares"}) async {
     return getJson(uri).then(((data) =>
         data['cast'].map<Cast>((item) => new Cast(item, MediaType.movie)).toList()));
   }
-  Future<List<Media>> fetchCreditShows(int mediaId) async {
+  Future<List<Cast>> fetchCreditShows(int mediaId) async {
     var uri = new Uri.https(_baseUrl,"3/tv/$mediaId/credits", 
         {
           'api_key': API_KEY,
